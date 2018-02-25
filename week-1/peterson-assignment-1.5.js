@@ -9,18 +9,24 @@ var header = require('../header.js');
 ;===========================================
 */ 
 
+var http = require("http");
 
 function processRequest(req, res) {
-    var body = "Hello World";
+
+var body = "This is really neat!";
 
     var contentLength = body.length;
 
     res.writeHead(200, {
+
         'Content-Length': contentLength,
+
         'Content-Type': 'text/plain'
+
     });
 
     res.end(body);
+
 }
 
 var s = http.createServer(processRequest);
