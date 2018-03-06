@@ -33,4 +33,6 @@ app.use(function(req, res) {  // HTTP use request with function that accepts a r
     res.end('404!\n');  //returns a 404 message to the end user
 });
 
-http.createServer(app).listen(8080); // Creates server that listens on port 8080
+http.createServer(app).listen(3000, function() {  // Creates server that listens on port 3000
+    console.log('Application started on port %s', 3000); // Logs output on port 3000
+});
