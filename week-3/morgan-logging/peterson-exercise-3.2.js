@@ -33,4 +33,5 @@ http.createServer(app).listen(3000, function() {  // Creates server that listens
 });
 
 //Output results
+//
 //Application started on port 3000
