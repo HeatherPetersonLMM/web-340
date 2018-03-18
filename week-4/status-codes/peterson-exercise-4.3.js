@@ -43,3 +43,7 @@ app.get("/not-implemented", function(req, res) {  // creates GET request for 501
 http.createServer(app).listen(7070, function() {  // creates the server to listen on port 7070
    console.log("Application started on port 7070.");  // logs output message on port 7070
 });
+
+// Output results
+//
+// Application started on port 7070.
