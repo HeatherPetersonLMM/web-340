@@ -26,3 +26,7 @@ app.get("/customer/:id", function (req, res) {  // HTTP get request with /custom
 http.createServer(app).listen(2000, function() {  // creates the server to listen on port 2000
     console.log("Application started on port 2000"); // logs output message on port 2000
 });
+
+// Output result
+//
+//Application started on port 2000
