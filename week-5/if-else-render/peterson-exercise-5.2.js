@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  Exercise 5.2
+; Author: Professor Krasso 
+; Date:   21 March 2018
+; Modified By: Heather Peterson
+; Description: EJS Templates
+;===========================================
+*/ 
 
 // requires
 var express = require("express");
