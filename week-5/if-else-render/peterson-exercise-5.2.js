@@ -12,7 +12,6 @@
 var express = require("express");
 var http = require("http");
 var path = require("path");
-var logger = require("morgan");
 
 // app functions
 var app = express();
