@@ -32,7 +32,7 @@
 <div role="main" class="container" style="width: 50%;">
     <br/><br/>
 
-    <% if (fruits.length) { %>
+    <% if (items.length) { %>
     <h2>-- Shop N Go --</h2><br />
     <a href="/new">Shop Now</a>
     <table class="table table-hover">
@@ -43,7 +43,7 @@
         </tr>
         </thead>
         <tbody>
-        <% fruits.forEach(function (entry) { %>
+        <% items.forEach(function (entry) { %>
         <tr>
             <td><%= entry.name %></td>
             <td><a href="/view/<%= entry.name %>">VIEW</a></td>

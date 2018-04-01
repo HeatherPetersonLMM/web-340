@@ -59,43 +59,43 @@ app.get("/", function (request, response) {
 
 app.get("/new", function (request, response) {
     response.render("new", {
-        title: "New Fruit"
+        title: "New Item"
     });
 });
 
 app.post("/process", function(request, response) {
    // console.log(request.body.txtName);
    if (!request.body.txtName) {
-       response.status(400).send("Entries must have a name");
+       response.status(400).send("Broom", "Oven", "Table", "Bed");
        return;
    }
 
    // get the request's form data
-   var fruitName = request.body.txtName;
-   console.log(fruitName);
+   var itemName = request.body.txtName;
+   console.log(itemName);
 
-   // create a fruit model
-   var fruit = new Fruit({
-       name: fruitName
+   // create a item model
+   var item = new Item({
+       name: itemName
    });
 
    // save
-   fruit.save(function (error) {
+   item.save(function (error) {
        if (error) throw error;
 
-       console.log(fruitName + " saved successfully!");
+       console.log(itemName + " saved successfully!");
    });
 
    response.redirect("/list");
 });
 
 app.get("/list", function(request, response) {
-    Fruit.find({}, function(error, fruits) {
+    Item.find({}, function(error, items) {
        if (error) throw error;
 
        response.render("list", {
-           title: "Fruit List",
-           fruits: fruits
+           title: "Item List",
+           items: items
        });
     });
 });
@@ -103,15 +103,15 @@ app.get("/list", function(request, response) {
 app.get("/view/:queryName", function (request, response) {
     var queryName = request.params.queryName;
 
-    Fruit.find({'name': queryName}, function(error, fruits) {
+    Item.find({'name': queryName}, function(error, items) {
         if (error) throw error;
 
-        console.log(fruits);
+        console.log(items);
 
-        if (fruits.length > 0) {
+        if (items.length > 0) {
             response.render("view", {
-                title: "Fruit Record",
-                fruit: fruits
+                title: "Item Record",
+                item: items
             })
         }
         else {
