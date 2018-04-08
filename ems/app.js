@@ -8,7 +8,7 @@ var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var csrf = require("csurf");
 var mongoose = require("mongoose");
-var Fruit = require("./models/fruit");
+var Employee = require("./models/employee");
 
 
 // database
@@ -59,43 +59,43 @@ app.get("/", function (request, response) {
 
 app.get("/new", function (request, response) {
     response.render("new", {
-        title: "New Item"
+        title: "New Employee"
     });
 });
 
 app.post("/process", function(request, response) {
    // console.log(request.body.txtName);
    if (!request.body.txtName) {
-       response.status(400).send("Broom", "Oven", "Table", "Bed");
+       response.status(400).send("Entries must have a name!");
        return;
    }
 
    // get the request's form data
-   var itemName = request.body.txtName;
-   console.log(itemName);
+   var employeeName = request.body.txtName;
+   console.log(employeeName);
 
-   // create a item model
-   var item = new Item({
-       name: itemName
+   // create a employee model
+   var employee = new Employee({
+       name: employeeName
    });
 
    // save
-   item.save(function (error) {
+   employee.save(function (error) {
        if (error) throw error;
 
-       console.log(itemName + " saved successfully!");
+       console.log(employeeName + " saved successfully!");
    });
 
    response.redirect("/list");
 });
 
 app.get("/list", function(request, response) {
-    Item.find({}, function(error, items) {
+    Employee.find({}, function(error, items) {
        if (error) throw error;
 
        response.render("list", {
-           title: "Item List",
-           items: items
+           title: "Employee List",
+           employees: employees
        });
     });
 });
@@ -103,15 +103,15 @@ app.get("/list", function(request, response) {
 app.get("/view/:queryName", function (request, response) {
     var queryName = request.params.queryName;
 
-    Item.find({'name': queryName}, function(error, items) {
+    Employee.find({'name': queryName}, function(error, items) {
         if (error) throw error;
 
-        console.log(items);
+        console.log(employees);
 
-        if (items.length > 0) {
+        if (employees.length > 0) {
             response.render("view", {
-                title: "Item Record",
-                item: items
+                title: "Employee Record",
+                employee: employees
             })
         }
         else {
@@ -122,6 +122,10 @@ app.get("/view/:queryName", function (request, response) {
 });
 
 
-http.createServer(app).listen(app.get("port"), function() {
-    console.log("Application started on port " + app.get("port"));
+// create server
+
+http.createServer(app).listen(8080, function() {
+
+    console.log("Application started on port 8080!");
+
 });
