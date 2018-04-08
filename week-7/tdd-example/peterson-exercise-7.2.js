@@ -19,3 +19,10 @@ describe("String#split", function(){
         assert(Array.isArray('Apple, Orange, Mango' .split(',')));
     });
 });
+
+// Output results
+//
+// String#split
+// (checkmark) should return an array of fruits
+//
+// 1 passing 
