@@ -14,7 +14,7 @@ var http = require('http');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
-// specify mongoDB connection string
+// specifies mongoDB connection string
 var mongoDB = 'mongodb://hpeterson.lmm:Rum1chata@ds229549.mlab.com:29549/ems';
 mongoose.connect(mongoDB, { // create connection
     useMongoClient: true
