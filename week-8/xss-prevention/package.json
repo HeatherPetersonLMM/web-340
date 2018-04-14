@@ -1,0 +1,12 @@
+{
+    "name": "xss-prevention",
+    "author": "Heather Peterson",
+    "private": true,
+    "version": "0.0.1",
+    "dependencies": {
+        "ejs": "^2.5.8",
+        "express": "^4.16.3",
+        "helmet": "^3.12.0",
+        "morgan": "^1.9.0"
+    }
+}
