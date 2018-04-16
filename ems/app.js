@@ -86,7 +86,7 @@ app.post("/process", function(request, response) {
        console.log(employeeName + " saved successfully!");
    });
 
-   response.redirect("/list");
+   response.redirect("/");
 });
 
 app.get("/list", function(request, response) {
