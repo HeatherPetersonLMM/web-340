@@ -1,3 +1,14 @@
+/*
+============================================
+; Title:  Assignment 8.4
+; Author: Professor Krasso 
+; Date:   14 April 2018
+; Modified By: Heather Peterson
+; Description: EMS MongoDB Integration
+;===========================================
+*/
+
+
 // require statements
 var express = require("express");
 var http = require("http");
