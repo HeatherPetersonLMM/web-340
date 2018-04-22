@@ -43,12 +43,9 @@
                 <tbody>
                     <%employees.forEach(function(entry){%>
                         <tr>
-                            <td>
-                                <%=entry.firstName%>
-                            </td>
-                            <td>
-                                <%=entry.lastName%>
-                            </td>
+                            <td><%=entry.firstName%></td>
+                            <td><%=entry.lastName%></td>
+                            <td><a href="/view/<%= entry.lastName %>">Search</a></td>
                         </tr>
                 </tbody>
                 <%})%>
